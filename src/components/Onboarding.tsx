@@ -15,7 +15,7 @@ export function Onboarding({ mesh }: { mesh: Mesh }) {
         {step === 0 && (
           <>
             <Crest className="sheet-crest" />
-            <h2 id="onb-title" className="display">Welcome to MeshCore</h2>
+            <h2 id="onb-title" className="display">Welcome to Game Day</h2>
             <p className="muted">Off-grid messaging over LoRa — plus local weather from your mesh weather bot.</p>
             <div className="form-actions">
               <button className="btn btn-ghost" onClick={finish}>Skip</button>

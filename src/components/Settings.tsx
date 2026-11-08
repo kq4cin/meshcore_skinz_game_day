@@ -73,7 +73,7 @@ export function SettingsTab({ mesh }: { mesh: Mesh }) {
         {install && <button className="btn btn-primary" onClick={() => void install.prompt().then(() => setInstall(null))}>Install app</button>}
         <button className="btn btn-ghost" onClick={() => updateSettings({ onboarded: false })}>Replay setup</button>
         <button className="btn btn-ghost" onClick={() => { if (confirm('Delete all saved messages on this device?')) mesh.clearHistory(); }}>Clear message history</button>
-        <p className="small muted">MeshCore Client PWA · data stays on this device.</p>
+        <p className="small muted">Game Day MeshCore Client PWA · data stays on this device.</p>
       </Section>
     </div>
   );

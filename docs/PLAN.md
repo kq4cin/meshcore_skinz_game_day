@@ -16,8 +16,9 @@ This plan uses the **Elephant & Goldfish** model:
 ### Mission
 A clone of the MeshCore web client (companion-radio client) that:
 1. Is an installable, offline-capable **PWA**.
-2. Wears a **patriotic theme** (navy / red / cream / gold, eagle crest, stars & stripes)
-   derived from the supplied asset pack.
+2. Wears the **Game Day: TN Ties theme** (orange / charcoal / white, megaphone badge crest,
+   end-zone checkerboard, chevrons) derived from the supplied asset pack. No footballs,
+   team names or logo letter marks (trademark/infringement risk).
 3. Adds a **Weather tab**: the user enters a **ZIP code** and a **weather hashtag
    channel** (e.g. `#weather`). The app sends the ZIP to the bot on that channel and
    shows the bot's replies in the Weather tab.
@@ -66,11 +67,11 @@ Stack: Vite + React 19 + TypeScript, Vitest (unit), Playwright (e2e), GitHub Pag
 | Tab | Asset-pack icon | Contents |
 | --- | --- | --- |
 | Messages | "Messages" (chat bubbles) | Channels + Direct, thread view |
-| Weather | (new — cloud + star in the same style) | Hero report card, "Request" button, history |
-| Network | "Network" (star nodes) | Heard nodes, send advert |
-| Settings | "Settings" (gear + wing) | Profile, Weather, Device, Radio (read-only) |
+| Weather | (new — sun + cloud + whistle in the same style) | Hero report card, "Request" button, history |
+| Network | "Community" (crowd + plain pennant) | Heard nodes, send advert |
+| Settings | "Settings" (gear + cloud + database) | Profile, Weather, Device, Radio (read-only) |
 
-Header: eagle crest + node name + one status dot (Online / Offline / Error from the pack).
+Header: megaphone badge crest + "Game Day" brand + node name + one status dot (Online / Offline / Error from the pack).
 
 ### Responsive rules
 - `< 900 px`: bottom tab bar, one pane, thread opens full-screen with back button.
@@ -78,9 +79,10 @@ Header: eagle crest + node name + one status dot (Online / Offline / Error from 
 - Fluid type with `clamp()`, `100dvh`, `env(safe-area-inset-*)`, `prefers-reduced-motion`.
 
 ### Theme tokens
-`--navy #0b1d4a` · `--navy-deep #06112e` · `--red #c8102e` · `--cream #f4ecd8`
-· `--gold #e7b84b` · `--ink #0a0f1f` · status `--ok #2ecc40` `--bad #ff3b3b` `--warn #f5c518`.
-Display font: **Oswald 600/700**, self-hosted via `@fontsource/oswald` (bundled + cached by the service worker — no CDN, works offline, consistent on iOS/Android).
+`--orange #ff8200` · `--orange-btn #e06f00` · `--orange-deep #b85400` (orange text/fills on white, AA) · `--char #333333`
+· `--char-deep #1f1f1f` · `--white #ffffff` · `--ink #1c1c1c` · status `--ok #2ecc40` `--bad #ff3b3b` `--warn #f5c518`.
+White scoreboard panels (`.card`, `.sheet`, lists, …) locally override `--text`/`--muted`/`--line`/`--accent` for ink-on-white.
+Title font: **Graduate** (collegiate slab, `@fontsource/graduate`). Display font: **Oswald 600/700**, self-hosted via `@fontsource/oswald` (bundled + cached by the service worker — no CDN, works offline, consistent on iOS/Android).
 
 ---
 
